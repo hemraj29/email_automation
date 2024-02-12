@@ -13,7 +13,7 @@ app.get('/',(req,res) => {
     res.sendFile(__dirname + '/index.html')
 });
 
-app.post('/submit', async (req, res) => {
+app.post('/', async (req, res) => {
     const { email, name } = req.body;
 
     const emailSent = await sendEmail(email, name); // Call the sendEmail function
