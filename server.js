@@ -9,7 +9,7 @@ const app = express();
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 
-app.post('/',(req,res) => {
+app.get('/',(req,res) => {
     res.sendFile(__dirname + '/index.html')
 });
 
