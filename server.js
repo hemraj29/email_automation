@@ -1,6 +1,6 @@
 const bodyParser = require('body-parser');
 const express = require('express');
-const {sendEmail} = require('./index')
+const {sendEmail} = require('./index.js')
 
 
 const app = express();
@@ -20,7 +20,7 @@ app.post('/submit', async (req, res) => {
 
     if (emailSent) {
         const successMessage = '<div style="text-align: center;"><h2>Email sent successfully!</h2><p>Thank you for subscribing. Click <a href="/">here</a> to go back to the form.</p></div>';
-        res.send(successMessage);
+        res.sendFile(__dirname + '/sucess.html')
     } else {
         res.status(500).send('Error sending email');
     }
