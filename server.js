@@ -9,11 +9,11 @@ const app = express();
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 
-app.get('/',(req,res) => {
+app.post('/',(req,res) => {
     res.sendFile(__dirname + '/index.html')
 });
 
-app.post('/submit', async (req, res) => {
+app.get('/', async (req, res) => {
     const { email, name } = req.body;
 
     const emailSent = await sendEmail(email, name); // Call the sendEmail function
